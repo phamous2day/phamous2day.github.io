@@ -1,11 +1,11 @@
 # My Developer Portfolio
 
-A showcase of sample projects/assignments I've done while attending code-school, DigitalCrafts. I leveraged my frontend skills to create the portfolio which consists of: HTML5, CSS3, Bootstrap, JavaScript, Modals, font-awesome icons, etc.
+A showcase of sample projects/assignments I've done while attending code-school, DigitalCrafts. Components leveraged to create the portfolio include: HTML5, CSS3, Bootstrap, JavaScript, modals, font-awesome icons, etc.
 
 
 ### Content
 
-What are some elements you can expect to see:
+You can expect to see:
 
 ```
 * Summary
