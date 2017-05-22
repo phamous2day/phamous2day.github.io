@@ -19,6 +19,6 @@ You can expect to see:
 
 ##### URL to live portoflio
 
-# http://phamous2day.github.io/
+# https://phamous2day.github.io/
 
 
