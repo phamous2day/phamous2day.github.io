@@ -33,4 +33,233 @@
 
         .hero-content{position:relative;z-index:1;max-width:700px;padding:2rem}
         .title-container{margin-bottom:1rem}
-        .heading-1{font-size:clamp(2.5rem,6vw,4.5rem);color:url(#text-gradient);background:linear-gradient(135deg, var(--accent), var(--accent2));-webkit-background-clip:text;-webkit-text-
+        .heading-1{font-size:clamp(2.5rem,6vw,4.5rem);color:url(#text-gradient);background:linear-gradient(135deg, var(--accent), var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+        .hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.8;max-width:560px;margin:0 auto 2rem}
+        .hero-cta{display:inline-block;padding:.8rem 2rem;border:1px solid var(--accent);color:var(--accent);border-radius:50px;font-weight:500;transition:all .3s}
+        .hero-cta:hover{background:var(--accent);color:var(--bg)}
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: fadeUp 1s ease-out forwards;
+        }
+
+        /* SECTIONS */
+        section{max-width:860px;margin:0 auto;padding:5rem 1.5rem}
+        .section-title{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:.4rem}
+        .section-line{width:48px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;margin-bottom:2.5rem}
+
+        /* ABOUT */
+        .about p{color:var(--muted);margin-bottom:1.2rem;font-size:.98rem}
+        .about strong{color:var(--text)}
+        .about .highlight{color:var(--accent)}
+        .about .tagline{color:var(--text);font-weight:600;font-size:1.05rem;margin-top:1.5rem}
+
+        /* STATS */
+        .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
+        .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem 1.2rem;text-align:center;transition:border-color .3s,transform .3s}
+        .stat:hover{border-color:var(--accent);transform:translateY(-3px)}
+        .stat-val{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;margin-bottom:.3rem}
+        .stat:nth-child(1) .stat-val{color:var(--accent)}
+        .stat:nth-child(2) .stat-val{color:var(--accent2)}
+        .stat:nth-child(3) .stat-val{color:var(--warm)}
+        .stat-lbl{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+
+        /* EXPERIENCE */
+        .jobs{display:flex;flex-direction:column;gap:1.8rem}
+        .job{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;transition:border-color .3s}
+        .job:hover{border-color:var(--accent2)}
+        .job-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
+        .job-company{font-size:1.2rem;font-weight:700;color:#fff}
+        .job-date{font-size:.82rem;color:var(--muted);background:var(--surface2);padding:.3rem .8rem;border-radius:20px;white-space:nowrap}
+        .job-role{font-size:.9rem;color:var(--accent2);font-weight:500;margin-bottom:.8rem}
+        .job-desc{font-size:.92rem;color:var(--muted);line-height:1.7}
+
+        /* CONNECT */
+        .connect-text{color:var(--muted);margin-bottom:2rem;font-size:.98rem}
+        .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+        .link-card{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;transition:border-color .3s,transform .3s}
+        .link-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .link-icon{width:36px;height:36px;border-radius:8px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+        .link-info{display:flex;flex-direction:column}
+        .link-label{font-weight:600;font-size:.88rem;color:#fff}
+        .link-url{font-size:.76rem;color:var(--muted)}
+
+        /* FOOTER */
+        footer{text-align:center;padding:3rem 1.5rem;border-top:1px solid var(--border);max-width:860px;margin:0 auto}
+        .footer-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:var(--muted);margin-bottom:.8rem}
+        .footer-loc{font-size:.82rem;color:var(--muted);margin-bottom:.4rem}
+        .footer-copy{font-size:.75rem;color:#444}
+
+        @media(max-width:640px){
+            .stats{grid-template-columns:1fr}
+            .job-header{flex-direction:column}
+            .links{grid-template-columns:1fr}
+            section{padding:3.5rem 1.2rem}
+        }
+    </style>
+</head>
+<body>
+
+<main class="main-content">
+    <section class="hero-section" id="top">
+        <div class="background-image"></div>
+        
+        <div class="overlay"></div>
+
+        <div class="orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="title-container">
+                <h1 class="heading-1 animate-fade-up" style="font-family: 'Pacifico', cursive; line-height: 1.2; padding-bottom: 24px;">
+                  Aloha, my name is David Pham
+                </h1>
+            </div>
+            
+            <p class="hero-sub animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">Lead Product Designer @ CallRail · 
+            Previously at Cox Automotive, Salesforce, and Mailchimp · Turning 
+            complex workflows into simple, high-impact experiences</p>
+            <a href="#about" class="hero-cta animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">See my impact ↓</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+
+        <p>I'm a Lead Product Designer with <strong>10+ years of experience</strong> making complex tools feel effortless. I specialize in B2B products—analytics dashboards, CRM workflows, logistics platforms—where clarity directly drives revenue.</p>
+
+        <p>At Salesforce, I led UX for Inbox and Sales Cloud as part of a team that drove <strong class="highlight">$7.58B in combined revenue impact</strong>, redesigning task flows that cut completion time from <strong class="highlight">10 minutes to 1 minute</strong>. At Cox Automotive, I redesigned core workflows on Central Dispatch, the largest self-managed vehicle transport platform in the U.S. At Mailchimp, I designed onboarding and campaign experiences for a platform serving <strong class="highlight">14M+ users</strong> and sending <strong class="highlight">1B+ emails daily</strong>.</p>
+
+        <p>Now at CallRail, I lead design for marketing analytics tools that help small businesses make smarter decisions from their call data. I work best on small, fast-moving teams where I can go from whiteboard to shipped product quickly.</p>
+
+        <p class="tagline">I thrive on solving hard problems with small, fast-moving teams.</p>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-val">$7.58B</div>
+                <div class="stat-lbl">Team Revenue Impact (Sales Cloud)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-val">10→1 min</div>
+                <div class="stat-lbl">Task Time Reduced (Inbox)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-val">14M+</div>
+                <div class="stat-lbl">Platform Users (Mailchimp)</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="section-line"></div>
+
+        <div class="jobs">
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-company">CallRail</div>
+                    <span class="job-date">2025 – Present</span>
+                </div>
+                <div class="job-role">Lead Product Designer</div>
+                <p class="job-desc">Leading design for call analytics and conversation intelligence products. Defining UX patterns for how small businesses discover insights from inbound calls, forms, and chat.</p>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-company">Cox Automotive</div>
+                    <span class="job-date">2024 – 2025</span>
+                </div>
+                <div class="job-role">Senior UX Architect</div>
+                <p class="job-desc">Redesigned core workflows on Central Dispatch, an industry-leading B2B platform used by thousands of vehicle transportation professionals. Streamlined field service management for dispatchers, technicians, and customers.</p>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-company">Nelnet</div>
+                    <span class="job-date">2023 – 2024</span>
+                </div>
+                <div class="job-role">Senior Product Designer</div>
+                <p class="job-desc">Led end-to-end design of a mobile app for Nelnet Ventures, expanding the product into a new market segment by collaborating with a cross-continental team across the U.S. and Philippines.</p>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-company">Salesforce</div>
+                    <span class="job-date">2017 – 2023</span>
+                </div>
+                <div class="job-role">Staff Product Designer</div>
+                <p class="job-desc">Led UX for Inbox and Sales Cloud across a 6-year tenure. Redesigned key task flows that reduced completion time from 10 minutes to 1 minute. Contributed to a product org responsible for $7.58B in revenue impact.</p>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-company">Mailchimp</div>
+                    <span class="job-date">2012 – 2014</span>
+                </div>
+                <div class="job-role">Product Designer</div>
+                <p class="job-desc">Designed onboarding flows and campaign creation experiences for a platform sending over 1B emails daily. Focused on translating complex email-marketing concepts into interfaces accessible to non-technical users.</p>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-company">UX Design Bootcamp</div>
+                    <span class="job-date">2016 – 2017</span>
+                </div>
+                <div class="job-role">UX Designer</div>
+                <p class="job-desc">Intensive training in user experience design principles, research methods, and modern design methodologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="connect">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="section-line"></div>
+        <p class="connect-text">Always excited to discuss design, technology, and new opportunities.</p>
+
+        <div class="links">
+            <a href="mailto:phamdavid@outlook.com" class="link-card">
+                <div class="link-icon"></div>
+                <div class="link-info">
+                    <span class="link-label">Email</span>
+                    <span class="link-url">phamdavid@outlook.com</span>
+                </div>
+            </a>
+            <a href="https://linkedin.com/in/phamdavid" target="_blank" class="link-card">
+                <div class="link-icon">in</div>
+                <div class="link-info">
+                    <span class="link-label">LinkedIn</span>
+                    <span class="link-url">linkedin.com/in/phamdavid</span>
+                </div>
+            </a>
+            <a href="https://github.com/phamous2day" target="_blank" class="link-card">
+                <div class="link-icon"></div>
+                <div class="link-info">
+                    <span class="link-label">GitHub</span>
+                    <span class="link-url">github.com/phamous2day</span>
+                </div>
+            </a>
+            <a href="https://behance.net/phamous2day" target="_blank" class="link-card">
+                <div class="link-icon">Bē</div>
+                <div class="link-info">
+                    <span class="link-label">Behance</span>
+                    <span class="link-url">behance.net/phamous2day</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+</main> <footer>
+    <p class="footer-quote">"Make things happen, don't wait for things to happen for you."</p>
+    <p class="footer-loc">Based in Atlanta, GA</p>
+    <p class="footer-copy">© 2025 David Pham. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
